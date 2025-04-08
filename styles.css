@@ -1,0 +1,274 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #d0eaff;
+    background: url('robotic_arm.jpg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav.nav-animated {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(10, 25, 47, 0.9);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1s forwards;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    color: #00bfff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #d0eaff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+}
+
+/* Section Styles */
+section {
+    background: rgba(0, 5, 20, 0.75);
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 900px;
+    animation: fadeIn 1s ease;
+    box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00bfff;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Video and Map */
+.video-container,
+.map-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 20px;
+}
+
+.video-container iframe,
+.map-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #00bfff;
+    border-radius: 12px;
+}
+
+/* Resource Items */
+.resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 20px;
+}
+
+.resource-item img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid #00bfff;
+}
+
+.resource-item img:hover {
+    transform: scale(1.1);
+}
+
+.profile-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff; /* Optional border around the images */
+    cursor: pointer; /* Makes the images look clickable */
+}
+
+/* Hide the radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style the sections */
+.info-section {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    display: none; /* Sections are hidden by default */
+}
+
+/* When the first radio button is selected, show the All Profile Info section */
+input[type="radio"]#all-info-checkbox:checked ~ #all-info {
+    display: block;
+}
+
+/* When the second radio button is selected, show the Additional Info section */
+input[type="radio"]#additional-info-checkbox:checked ~ #additional-info {
+    display: block;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Style for the clickable buttons */
+.info-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.info-button:hover {
+    background-color: #45a049;
+}
+
+/* Hide the radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style the sections */
+.info-section {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    display: none; /* Sections are hidden by default */
+}
+
+/* When the first radio button is selected, show the Profile Info section */
+input[type="radio"]#profile-info-checkbox:checked ~ #profile-info {
+    display: block;
+}
+
+/* When the second radio button is selected, show the Skills Info section */
+input[type="radio"]#skills-info-checkbox:checked ~ #skills-info {
+    display: block;
+}
+
+/* Emojis */
+.emoji-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.emoji-list li {
+    background: rgba(255, 255, 255, 0.1);
+    color: #d0eaff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #00bfff;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.emoji-list li:hover {
+    background-color: #00bfff;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #0a192f, #112240, #0f223e);
+    color: #d0eaff;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    animation: fadeInFooter 1.5s ease-in-out;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .resources-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emoji-list {
+        grid-template-columns: 1fr;
+    }
+}

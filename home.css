@@ -1,0 +1,194 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #d0eaff;
+    background: url('robotic_arm.jpg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.nav-animated {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(10, 25, 47, 0.9);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: fadeIn 1s forwards;
+}
+
+.nav-animated .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00bfff;
+}
+
+.nav-animated ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-animated ul li a {
+    color: #d0eaff;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-animated ul li a:hover {
+    color: #00bfff;
+}
+
+/* Main Section */
+main {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+    background: rgba(0, 5, 20, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* About Section */
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 2px solid #00bfff;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #cde9ff;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* CTA Button */
+.cta-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 12px 24px;
+    background-color: #00bfff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* Footer */
+footer.footer-animated {
+    background: linear-gradient(to right, #0a192f, #112240, #0f223e);
+    color: #d0eaff;
+    padding: 40px 20px;
+    margin-top: 60px;
+    animation: fadeInFooter 1.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-logo h2 {
+    color: #00bfff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #bbb;
+    font-size: 0.95rem;
+}
+
+.footer-office h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer-office p,
+.footer-office a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-office a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-animated {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-animated ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
